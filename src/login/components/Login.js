@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles";
-import { Text, View, Image, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { useGoogleSignIn } from "../components/firebase/useGoogleSignIn";
+import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
+
+const logo = require("../../../assets/logoCompleto.png");
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const logo = require("../../../assets/logoCompleto.png");
-
-  const handleLogin = () => {
-    console.log(`Login con usuario: ${username} y contraseña: ${password}`);
-  };
+  const { token, userInfo, request, promptAsync } = useGoogleSignIn();
 
   return (
     <View style={styles.container}>
@@ -18,21 +15,17 @@ export default function Login() {
       </View>
       <View style={styles.formContainer}>
         <Text style={styles.label}>Email</Text>
-        <TextInput
-          value={username}
-          onChangeText={setUsername}
-          style={styles.input}
-        />
+        <TextInput value={null} onChangeText={null} style={styles.input} />
 
         <Text style={styles.label}>Password</Text>
         <TextInput
           secureTextEntry
-          value={password}
-          onChangeText={setPassword}
+          value={null}
+          onChangeText={null}
           style={styles.input}
         />
 
-        <TouchableOpacity onPress={handleLogin} style={styles.button}>
+        <TouchableOpacity onPress={null} style={styles.button}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
 
@@ -40,7 +33,21 @@ export default function Login() {
 
         <View style={styles.socialButtonsContainer}>
           <TouchableOpacity style={styles.socialButton}>
-            <Text style={styles.buttonText}> Google</Text>
+            {/* Inicio Sesion con GOOGLE */}
+            {userInfo === null ? (
+              <Text
+                title="Google"
+                disabled={!request}
+                onPress={() => {
+                  promptAsync();
+                }}
+                style={styles.buttonText}
+              >
+                Google
+              </Text>
+            ) : (
+              <Text style={styles.text}>{userInfo.name}</Text>
+            )}
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.FacebookButton}>
