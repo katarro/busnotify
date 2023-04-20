@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./styles";
-import { useGoogleSignIn } from "../components/firebase/useGoogleSignIn";
+import { useGoogleSignIn } from "../firebase/useGoogleSignIn";
 import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
-
+import LoginGoogle from "./LoginGoogle";
 const logo = require("../../../assets/logoCompleto.png");
 
 export default function Login() {
@@ -34,20 +34,12 @@ export default function Login() {
         <View style={styles.socialButtonsContainer}>
           <TouchableOpacity style={styles.socialButton}>
             {/* Inicio Sesion con GOOGLE */}
-            {userInfo === null ? (
-              <Text
-                title="Google"
-                disabled={!request}
-                onPress={() => {
-                  promptAsync();
-                }}
-                style={styles.buttonText}
-              >
-                Google
-              </Text>
-            ) : (
-              <Text style={styles.text}>{userInfo.name}</Text>
-            )}
+            <LoginGoogle
+              token={token}
+              userInfo={userInfo}
+              request={request}
+              promptAsync={promptAsync}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.FacebookButton}>
