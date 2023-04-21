@@ -7,20 +7,16 @@ export default function LoginGoogle(props) {
 
   return (
     <View>
-      {userInfo === null ? (
-        <Text
-          title="Google"
-          disabled={!request}
-          onPress={() => {
-            promptAsync();
-          }}
-          style={styles.buttonText}
-        >
-          Google
-        </Text>
-      ) : (
-        navigation.navigate("Main")
-      )}
+      <Text
+        title="Google"
+        disabled={!request}
+        onPress={() => {
+          promptAsync();
+        }}
+        style={styles.buttonText}
+      >
+        Google
+      </Text>
     </View>
   );
 }

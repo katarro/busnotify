@@ -3,4 +3,5 @@ export default function App() {
   return <AppNavigator />;
 }
 // Testeo de Google Auth
-//npx expo start --web --https
+// En credenciales: https://console.cloud.google.com/apis/credentials?project=busnotify-384103
+// Se debe ingresar la URL en la que esta el proyecto de desarrollo para el google auth.
