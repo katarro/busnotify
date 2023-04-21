@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "busnotify",
+    "scheme": "com.auth.busnotify",
     "slug": "busnotify",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,16 +16,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "com.auth.busnotify"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.auth.busnotify"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "772e6949-13fe-4e4f-b9f2-f910042fe90f"
+      }
     }
   }
 }
