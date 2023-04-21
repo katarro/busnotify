@@ -15,17 +15,17 @@ export default function Login() {
       </View>
       <View style={styles.formContainer}>
         <Text style={styles.label}>Email</Text>
-        <TextInput value={null} onChangeText={null} style={styles.input} />
+        <TextInput value={""} onChangeText={""} style={styles.input} />
 
         <Text style={styles.label}>Password</Text>
         <TextInput
           secureTextEntry
-          value={null}
-          onChangeText={null}
+          value={""}
+          onChangeText={""}
           style={styles.input}
         />
 
-        <TouchableOpacity onPress={null} style={styles.button}>
+        <TouchableOpacity onPress={""} style={styles.button}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
 

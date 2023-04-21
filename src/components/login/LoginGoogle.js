@@ -19,7 +19,7 @@ export default function LoginGoogle(props) {
           Google
         </Text>
       ) : (
-        <Text style={styles.text}>{userInfo.name}</Text>
+        navigation.navigate("Main")
       )}
     </View>
   );

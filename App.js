@@ -1,4 +1,6 @@
-import Login from "./src/components/login/Login";
+import AppNavigator from "./src/components/navigation/AppNavigator";
 export default function App() {
-  return <Login />;
+  return <AppNavigator />;
 }
+// Testeo de Google Auth
+//npx expo start --web --https
