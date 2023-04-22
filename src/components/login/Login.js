@@ -1,31 +1,43 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import {
+  Text,
+  View,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from "react-native";
+import * as WebBrowser from "expo-web-browser";
+import * as Google from "expo-auth-session/providers/google";
+import { useNavigation } from "@react-navigation/native";
+import logo from "../../../assets/logoCompleto.png";
 import styles from "./styles";
-import { useGoogleSignIn } from "../firebase/useGoogleSignIn";
-import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
-import LoginGoogle from "./LoginGoogle";
-const logo = require("../../../assets/logoCompleto.png");
+import useGoogleAuth from "../hooks/useGoogleAuth";
+import ButtonGoogle from "./ButtonGoogle";
+WebBrowser.maybeCompleteAuthSession();
 
+// SEPARAR TODO EN COMPONENTES MAS PEQUEÑOS
 export default function Login() {
-  const { token, userInfo, request, promptAsync } = useGoogleSignIn();
+  const { userInfo, promptAsync, request, token } = useGoogleAuth();
 
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image source={logo} style={styles.logo} />
       </View>
+
+      <Text style={styles.label}>Email</Text>
+      <TextInput value={""} onChangeText={""} style={styles.input} />
+
+      <Text style={styles.label}>Password</Text>
+      <TextInput
+        secureTextEntry
+        value={""}
+        onChangeText={""}
+        style={styles.input}
+      />
       <View style={styles.formContainer}>
-        <Text style={styles.label}>Email</Text>
-        <TextInput value={null} onChangeText={null} style={styles.input} />
-
-        <Text style={styles.label}>Password</Text>
-        <TextInput
-          secureTextEntry
-          value={null}
-          onChangeText={null}
-          style={styles.input}
-        />
-
-        <TouchableOpacity onPress={null} style={styles.button}>
+        <TouchableOpacity onPress={""} style={styles.button}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
 
@@ -33,8 +45,7 @@ export default function Login() {
 
         <View style={styles.socialButtonsContainer}>
           <TouchableOpacity style={styles.socialButton}>
-            {/* Inicio Sesion con GOOGLE */}
-            <LoginGoogle
+            <ButtonGoogle
               token={token}
               userInfo={userInfo}
               request={request}
