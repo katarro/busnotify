@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
 import * as Google from "expo-auth-session/providers/google";
 
-export const useGoogleSignIn = () => {
+function useGoogleAuth() {
+  const navigation = useNavigation();
   const [token, setToken] = useState("");
   const [userInfo, setUserInfo] = useState(null);
 
@@ -18,6 +20,7 @@ export const useGoogleSignIn = () => {
     if (response?.type === "success") {
       setToken(response.authentication.accessToken);
       getUserInfo();
+      navigation.navigate("Home");
     }
   }, [response, token]);
 
@@ -33,9 +36,11 @@ export const useGoogleSignIn = () => {
       const user = await response.json();
       setUserInfo(user);
     } catch (error) {
-      // Add your own error handler here
+      console.error(error);
     }
   };
 
-  return { token, userInfo, request, promptAsync };
-};
+  return { token, userInfo, promptAsync };
+}
+
+export default useGoogleAuth;

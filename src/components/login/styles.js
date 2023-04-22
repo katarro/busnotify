@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 50,
-    fontFamily: 'Asap',
+    fontFamily: "Asap",
   },
   logoContainer: {
     alignItems: "center",
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     flex: 1,
+    marginTop: 20,
   },
   label: {
     color: "#1da1f2",
