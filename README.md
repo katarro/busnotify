@@ -10,4 +10,4 @@ Para instalar la aplicación, sigue los siguientes pasos:
 * Clona este repositorio en tu ordenador local.
 * Abre una terminal y navega hasta la carpeta raíz del repositorio.
 * Ejecuta el comando npm install para instalar las dependencias.
-* Ejecuta el comando npm start para iniciar la aplicación.
+* Ejecuta el comando npx expo start para iniciar la aplicación.
