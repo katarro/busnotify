@@ -13,7 +13,8 @@ Para instalar la aplicación, sigue los siguientes pasos:
 * Ejecuta el comando npx expo start para iniciar la aplicación.
 
 ## Descripción
-Esta aplicación móvil que está en desarrollo es una solución tecnológica para mejorar la movilidad urbana en la ciudad. Con la capacidad de acceder a información en tiempo real sobre el transporte público, los usuarios podrán tomar decisiones informadas sobre sus opciones de viaje. 
-La aplicación permitirá a los usuarios buscar y seleccionar sus paradas y rutas favoritas, recibir notificaciones personalizadas sobre los horarios de los buses y consultar su saldo en tarjetas Bip. 
-Se espera que la aplicación tenga un impacto significativo en la calidad de vida de los usuarios mediante la integrabilidad de muchos requisitos funcionales. 
-Este proyecto representa un desafío, que debe diseñar una solución escalable para satisfacer las necesidades de los usuarios y cumplir con los requisitos funcionales.
+* Esta aplicación móvil que está en desarrollo es una solución tecnológica para mejorar la movilidad urbana en la ciudad. 
+* Con la capacidad de acceder a información en tiempo real sobre el transporte público, los usuarios podrán tomar decisiones informadas sobre sus opciones de viaje. 
+* La aplicación permitirá a los usuarios buscar y seleccionar sus paradas y rutas favoritas, recibir notificaciones personalizadas sobre los horarios de los buses y consultar su saldo en tarjetas Bip. 
+* Se espera que la aplicación tenga un impacto significativo en la calidad de vida de los usuarios mediante la integrabilidad de muchos requisitos funcionales. 
+* Este proyecto representa un desafío, que debe diseñar una solución escalable para satisfacer las necesidades de los usuarios y cumplir con los requisitos funcionales.
