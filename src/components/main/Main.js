@@ -1,20 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
 import styles from "./styles";
 import ListItem from "./ListItem";
+import useGetBusStopData from "../hooks/useBusStopData";
 
 export default function Main() {
+  const { data, loading, getBusStopData } = useGetBusStopData();
   const [paradero, setParadero] = useState("");
-  const data = [
-    { id: "0", title: "214" },
-    { id: "1", title: "301" },
-    { id: "2", title: "302" },
-    { id: "3", title: "201" },
-    { id: "4", title: "H13" },
-    { id: "5", title: "H07" },
-  ];
 
-  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lista de Buses</Text>
@@ -23,15 +16,38 @@ export default function Main() {
           type="text"
           style={styles.input}
           value={paradero}
-          placeholder="Buscar Paradero"
+          placeholder="Codigo Paradero"
           onChangeText={(texto) => setParadero(texto)}
         />
       </View>
+      <Button
+        title={"Buscar"}
+        onPress={() => {
+          getBusStopData(paradero);
+        }}
+      />
       <View style={styles.containerBuses}>
         <View style={styles.buses}>
-          {data.map((item) => (
-            <ListItem key={item.id} item={item} />
-          ))}
+          {loading ? (
+            <Text>Loading...</Text>
+          ) : (
+            <View>
+              {data &&
+                data.map((servicio) => (
+                  <View key={servicio.id}>
+                    {servicio.buses.map((bus) => (
+                      <ListItem
+                        key={bus.id}
+                        id={servicio.id}
+                        dist={bus.meters_distance}
+                        time_min={bus.min_arrival_time}
+                        time_max={bus.max_arrival_time}
+                      />
+                    ))}
+                  </View>
+                ))}
+            </View>
+          )}
         </View>
       </View>
     </View>
