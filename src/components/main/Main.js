@@ -38,6 +38,7 @@ export default function Main() {
                     {servicio.buses.map((bus) => (
                       <ListItem
                         key={bus.id}
+                        patente={bus.id}
                         id={servicio.id}
                         dist={bus.meters_distance}
                         time_min={bus.min_arrival_time}
