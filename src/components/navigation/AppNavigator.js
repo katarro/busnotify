@@ -1,21 +1,21 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Index from "../../screens/Index";
-import Home from "../../screens/Home";
+import ListBuses from "../../screens/viewListBuses";
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="ListBuses">
         <Stack.Screen
           name="Index"
           component={Index}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="ListBuses"
+          component={ListBuses}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

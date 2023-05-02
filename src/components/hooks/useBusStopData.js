@@ -8,7 +8,8 @@ function useBusStopData() {
   async function getBusStopData(paradero) {
     try {
       const response = await axios.get(
-        `https://api.xor.cl/red/bus-stop/${paradero}`
+        "https://api.xor.cl/red/bus-stop/PA443"
+        //`https://api.xor.cl/red/bus-stop/${paradero}`
       );
       const services = response.data.services;
       setData(services);

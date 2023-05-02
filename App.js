@@ -1,6 +1,9 @@
 import AppNavigator from "./src/components/navigation/AppNavigator";
+
 export default function App() {
-  return <AppNavigator />;
+  return (
+      <AppNavigator />
+  )
 }
 // Testeo de Google Auth
 // En credenciales: https://console.cloud.google.com/apis/credentials?project=busnotify-384103
