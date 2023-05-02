@@ -3,10 +3,16 @@ import { View, Text, TextInput, Button } from "react-native";
 import styles from "./styles";
 import ListItem from "./ListItem";
 import useGetBusStopData from "../hooks/useBusStopData";
+import useFavoritos from "../hooks/useFavoritos";
 
 export default function Main() {
   const { data, loading, getBusStopData } = useGetBusStopData();
+  const { favoritos, agregarFavorito, eliminarFavorito } = useFavoritos();
   const [paradero, setParadero] = useState("");
+
+  React.useEffect(() => {
+    getBusStopData();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -43,6 +49,9 @@ export default function Main() {
                         dist={bus.meters_distance}
                         time_min={bus.min_arrival_time}
                         time_max={bus.max_arrival_time}
+                        favoritos={favoritos}
+                        agregarFavorito={agregarFavorito}
+                        eliminarFavorito={eliminarFavorito}
                       />
                     ))}
                   </View>
