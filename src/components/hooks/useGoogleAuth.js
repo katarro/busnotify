@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Google from "expo-auth-session/providers/google";
-
+const viewRedirection = "viewHome";
 function useGoogleAuth() {
   const navigation = useNavigation();
   const [token, setToken] = useState("");
@@ -20,7 +20,7 @@ function useGoogleAuth() {
     if (response?.type === "success") {
       setToken(response.authentication.accessToken);
       getUserInfo();
-      navigation.navigate("Home");
+      navigation.navigate(viewRedirection);
     }
   }, [response, token]);
 
