@@ -4,6 +4,7 @@ import styles from "./styles";
 import ListItem from "./ListItem";
 import useGetBusStopData from "../hooks/useBusStopData";
 import useFavoritos from "../hooks/useFavoritos";
+import BackButton from "../goBack/BackButton";
 
 export default function Main() {
   const { data, loading, getBusStopData } = useGetBusStopData();
@@ -16,6 +17,7 @@ export default function Main() {
 
   return (
     <View style={styles.container}>
+      <BackButton />
       <Text style={styles.title}>Lista de Buses</Text>
       <View style={styles.inputContainer}>
         <TextInput

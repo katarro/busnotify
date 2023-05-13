@@ -19,7 +19,7 @@ export default function Home() {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.item}
-        //onPress={() => handleLinkPress("Asignar alarma a los favoritos")}
+        onPress={() => handleLinkPress("ViewNotifications")}
       >
         <Text style={styles.text}>Asignar alarma</Text>
       </TouchableOpacity>

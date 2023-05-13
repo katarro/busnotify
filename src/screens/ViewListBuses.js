@@ -1,5 +1,5 @@
 import ListBuses from "../components/listBuses/ListBuses";
 
-export default function viewListBuses() {
+export default function ViewListBuses() {
   return <ListBuses />;
 }

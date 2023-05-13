@@ -10,9 +10,9 @@ const ListItem = (props) => {
     dist,
     time_min,
     time_max,
-    favoritos,
-    agregarFavorito,
-    eliminarFavorito,
+    favoritos = [],
+    agregarFavorito = () => {},
+    eliminarFavorito = () => {},
   } = props;
 
   const handleFavoritoPress = () => {
