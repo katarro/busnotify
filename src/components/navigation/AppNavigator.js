@@ -11,10 +11,10 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Index">
+      <Stack.Navigator initialRouteName="Register">
         <Stack.Screen
           name="ViewHome"
-          component={Index}
+          component={Register}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -33,12 +33,12 @@ const AppNavigator = () => {
           options={{ headerShown: false }}
         />
 
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Register"
           component={Register}
           options={{headerShown: false}}
 
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
