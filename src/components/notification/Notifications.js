@@ -8,7 +8,7 @@ import { usePermissions, sendPushNotificationAsync } from "expo-notifications";
 export default function Notifications() {
   const [data, setData] = React.useState([]);
 
-  const handlePress = async (id, time_min, time_max) => {
+  /* const handlePress = async (id, time_min, time_max) => {
     try {
       const {
         data: { data: token },
@@ -22,7 +22,7 @@ export default function Notifications() {
     } catch (error) {
       console.error("Error al enviar la notificación:", error);
     }
-  };
+  }; */
 
   React.useEffect(() => {
     const fetchData = async () => {

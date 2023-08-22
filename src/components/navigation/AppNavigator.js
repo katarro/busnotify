@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ViewNotifications">
+      <Stack.Navigator initialRouteName="ViewHome">
         <Stack.Screen
           name="ViewHome"
           component={ViewHome}
