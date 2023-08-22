@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -7,9 +6,9 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
-import { useNavigation } from "@react-navigation/native";
 import logo from "../../../assets/logoCompleto.png";
 import styles from "./styles";
 import useGoogleAuth from "../hooks/useGoogleAuth";
@@ -18,7 +17,9 @@ WebBrowser.maybeCompleteAuthSession();
 
 // SEPARAR TODO EN COMPONENTES MAS PEQUEÑOS
 export default function Login() {
+  const navigation = useNavigation();
   const { userInfo, promptAsync, request, token } = useGoogleAuth();
+
 
   return (
     <View style={styles.container}>
@@ -40,6 +41,9 @@ export default function Login() {
         <TouchableOpacity onPress={""} style={styles.button}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
+       
+
+      
 
         <Text style={styles.orText}>o usa una de tus redes favoritas</Text>
 
@@ -63,7 +67,7 @@ export default function Login() {
             <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={styles.signUpLink}> Sign Up</Text>
+            <Text style={styles.signUpLink} onPress={()=>navigation.navigate('Register')}> Sign Up</Text>
           </TouchableOpacity>
         </View>
       </View>
