@@ -1,11 +1,5 @@
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
+import react, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
@@ -17,9 +11,13 @@ WebBrowser.maybeCompleteAuthSession();
 
 // SEPARAR TODO EN COMPONENTES MAS PEQUEÑOS
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigation = useNavigation();
   const { userInfo, promptAsync, request, token } = useGoogleAuth();
 
+  const Login = () => {};
 
   return (
     <View style={styles.container}>
@@ -28,22 +26,27 @@ export default function Login() {
       </View>
 
       <Text style={styles.label}>Email</Text>
-      <TextInput value={""} onChangeText={""} style={styles.input} />
+      <TextInput
+        value={email}
+        onChangeText={(email) => {
+          setEmail(email);
+        }}
+        style={styles.input}
+      />
 
       <Text style={styles.label}>Password</Text>
       <TextInput
         secureTextEntry
-        value={""}
-        onChangeText={""}
+        value={password}
+        onChangeText={(password) => {
+          setPassword(password);
+        }}
         style={styles.input}
       />
       <View style={styles.formContainer}>
-        <TouchableOpacity onPress={""} style={styles.button}>
+        <TouchableOpacity onPress={Login} style={styles.button}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
-       
-
-      
 
         <Text style={styles.orText}>o usa una de tus redes favoritas</Text>
 
@@ -64,10 +67,18 @@ export default function Login() {
 
         <View style={styles.bottomLinksContainer}>
           <TouchableOpacity>
-            <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
+            <Text style={styles.forgotPasswordLink}>
+              ¿Olvidó su contraseña?
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={styles.signUpLink} onPress={()=>navigation.navigate('Register')}> Sign Up</Text>
+            <Text
+              style={styles.signUpLink}
+              onPress={() => navigation.navigate("Register")}
+            >
+              {" "}
+              Registrar
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

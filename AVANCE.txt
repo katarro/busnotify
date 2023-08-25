@@ -3,8 +3,9 @@ AVANCE
 RESTANTES:
 0. Modelar la base de datos.
 1. Crear abse de datos para: 
-    a. Registrar usuarios -> JWT
+    *a. Registrar usuarios -> JWT
     b. Logear usuarios    -> JWT
+    c. Crear usuario y enlazarlo a su base de datos respectivas.
 
 2. Guardar "Me gusta en lista de Favoritos"
 3. Asignar una alarma de una micro "x" en el paradero "y".
