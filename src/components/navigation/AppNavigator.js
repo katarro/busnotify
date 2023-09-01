@@ -4,7 +4,6 @@ import Index from "../../screens/Index";
 import ListBuses from "../../screens/ViewListBuses";
 import ViewHome from "../../screens/ViewHome";
 import ViewNotifications from "../../screens/ViewNotifications";
-import Register from "../../screens/ViewRegister";
 
 const Stack = createStackNavigator();
 
@@ -33,11 +32,7 @@ const AppNavigator = () => {
           options={{ headerShown: false }}
         />
 
-        <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{ headerShown: false }}
-        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
